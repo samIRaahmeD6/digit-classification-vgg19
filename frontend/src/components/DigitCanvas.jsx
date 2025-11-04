@@ -1,7 +1,7 @@
 // DigitCanvas.jsx
 import React, { useRef, useEffect, useState } from "react";
 
-export default function DigitCanvas({ backendUrl = "http://localhost:5000" }) {
+export default function DigitCanvas({ backendUrl = "https://digit-classification-vgg19.onrender.com/predict)" }) {
   const canvasRef = useRef(null);
   const [result, setResult] = useState(null);
 

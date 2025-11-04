@@ -15,3 +15,4 @@ backend/models/
 
 # OS / Misc
 .DS_Store
+clean-repo/
