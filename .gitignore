@@ -1,0 +1,17 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+
+# Node / React
+node_modules/
+
+# Model files
+*.h5
+backend/models/
+
+# OS / Misc
+.DS_Store
