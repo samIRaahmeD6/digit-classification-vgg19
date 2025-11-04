@@ -7,12 +7,28 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.vgg19 import preprocess_input
+import gdown
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+MODEL_DIR = os.path.join(BASE_DIR, "models")
+MODEL_PATH = os.path.join(MODEL_DIR, "digit_classifier.h5")
+MODEL_URL = "https://drive.google.com/uc?id=1-DQVxeCxFxrbP35uJm6hZ6JYjLzWHcBN"
+
+# Ensure folder exists BEFORE downloading
+os.makedirs(MODEL_DIR, exist_ok=True)
 
 app = Flask(__name__)
 CORS(app)
 
-MODEL_PATH = "models/digit_classifier.h5"
 
+
+# MODEL_PATH = "models/digit_classifier.h5"
+# os.makedirs(MODEL_DIR, exist_ok=True)
+
+# Download model if it doesn't exist locally
+if not os.path.exists(MODEL_PATH):
+    print("Downloading model from Google Drive...")
+    gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
 # Load model and inspect input shape
 model = load_model(MODEL_PATH)
 input_shape = model.input_shape  # e.g., (None, 224, 224, 3) or (None, 28, 28, 1)
