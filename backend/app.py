@@ -18,8 +18,7 @@ MODEL_URL = "https://drive.google.com/uc?id=1-DQVxeCxFxrbP35uJm6hZ6JYjLzWHcBN"
 os.makedirs(MODEL_DIR, exist_ok=True)
 
 app = Flask(__name__)
-CORS(app)
-
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 
 # MODEL_PATH = "models/digit_classifier.h5"
