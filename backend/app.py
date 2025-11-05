@@ -18,7 +18,7 @@ MODEL_URL = "https://drive.google.com/uc?id=1-DQVxeCxFxrbP35uJm6hZ6JYjLzWHcBN"
 os.makedirs(MODEL_DIR, exist_ok=True)
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 
 # MODEL_PATH = "models/digit_classifier.h5"
@@ -73,7 +73,9 @@ def preprocess_image(img: Image.Image):
     arr = np.expand_dims(arr, axis=0)  # add batch dimension
     return arr
 
-
+@app.route("/", methods=["GET"])
+def home():
+    return "Digit Classification API is running 🚀"
 @app.route("/predict", methods=["POST"])
 def predict():
     """
