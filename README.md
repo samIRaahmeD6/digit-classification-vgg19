@@ -1,4 +1,4 @@
-##Digit Classification Application
+#Digit Classification Application
 
 ##Live Demo
 **Live Application:** https://digit-classification-vgg19-1.onrender.com/
