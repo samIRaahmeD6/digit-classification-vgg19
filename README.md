@@ -64,7 +64,7 @@ digit-classification/
 
 ## Installation & Setup
 # Clone the repository
-git clone https://github.com/your-username/digit-classification.git
+git clone https://github.com/samIRaahmeD6/digit-classification-vgg19.git
 
 # Navigate to project directory
 cd digit-classification
