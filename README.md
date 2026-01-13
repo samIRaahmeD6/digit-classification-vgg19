@@ -1,6 +1,6 @@
-#Digit Classification Application
+Digit Classification Application
 
-##Live Demo
+Live Demo
 **Live Application:** https://digit-classification-vgg19-1.onrender.com/
 A web-based Digit Classification Application that uses Deep Learning to recognize handwritten digits from images.
 The model is built using VGG19 (Transfer Learning) and served through a Flask backend, providing fast and accurate predictions via a simple web interface.
